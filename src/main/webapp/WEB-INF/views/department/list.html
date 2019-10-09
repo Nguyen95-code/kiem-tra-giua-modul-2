@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department list</title>
+</head>
+<body>
+<a href="/create-department">Create new department</a>
+<h1>Department</h1>
+<form>
+    Search by department:
+    <input name="s" type="text"/>
+    <input type="submit" value="Search"/>
+</form>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    <th:block th:each="department : ${departments}">
+        <tr>
+            <td th:text="${department.id}"></td>
+            <td th:text="${department.name}"></td>
+            <td><a th:href="@{/department/edit/__${department.id}__ }">Edit</a></td>
+            <td><a th:href="@{/department/delete/__${department.id}__ }">Delete</a></td>
+            <td><a th:href="@{/department/view/__${department.id}__}">View</a> </td>
+        </tr>
+    </th:block>
+</table>
+<div>
+    <a th:href="@{'/departments'(page=${departments.number - 1})}" th:if="${departments.hasPrevious()}">Previous</a>
+    <span th:text="${departments.number + 1}"></span>/<span th:text="${departments.totalPages}"></span>
+    <a th:href="@{'/departments'(page=${departments.number + 1})}" th:if="${departments.hasNext()}">Next</a>
+</div>
+</body>
+</html>
