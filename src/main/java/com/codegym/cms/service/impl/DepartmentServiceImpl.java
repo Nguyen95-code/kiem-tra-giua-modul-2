@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 
 public class DepartmentServiceImpl implements DepartmentService {
 
@@ -26,6 +28,12 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void delete(long id) {
+        Department department = findById(id);
+        List<Employee> employees = (List<Employee>) findAllByDepartment(department);
+        for (int i = 0; i < employees.size(); i++) {
+            employeeRepository.delete(employees.get(i));
+        }
+
         departmentRepository.delete(id);
     }
 

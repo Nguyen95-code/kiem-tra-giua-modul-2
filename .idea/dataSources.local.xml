@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="nguyen4@localhost" uuid="7bf90fdc-e60f-4cef-b343-27aa4a280d68">
+    <data-source name="@localhost" uuid="4c3a463f-51c2-4e99-8487-91bad26ba4cf">
       <database-info product="MySQL" version="8.0.17" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="8.0.17" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:@</introspection-schemas>
+      <introspection-schemas>*:nguyen</introspection-schemas>
     </data-source>
   </component>
 </project>

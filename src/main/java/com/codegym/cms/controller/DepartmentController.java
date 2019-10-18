@@ -81,7 +81,7 @@ public class DepartmentController {
     @PostMapping("/department/delete")
     public String deleteDepartment(@RequestParam("id") Long id){
         departmentService.delete(id);
-        return "redirect:/departments";
+        return "redirect:/employees";
     }
 
     @GetMapping("/department/view/{id}")
